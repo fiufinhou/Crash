@@ -4,13 +4,18 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 module.exports = async () => {
     try {
         const options = {
-            headless: true, // تعديل: تم تعطيل وضع الرأسية
+            headless: true, // تم تعطيل وضع الرأسية لأننا نستخدم الهاتف
             ignoreHTTPSErrors: true,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
                 '--ignore-certificate-errors',
+                '--disable-dev-shm-usage', // تمت إضافته
+                '--disable-gpu', // تمت إضافته
+                '--disable-xss-auditor', // تمت إضافته
+                '--disable-web-security', // تمت إضافته
             ],
+            executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // تم تحديده لمتصفح Google Chrome
         };
         await puppeteer.use(StealthPlugin());
         const browser = await puppeteer.launch(options);
