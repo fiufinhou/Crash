@@ -2,9 +2,9 @@
   "name": "iphone-8-scripts",
   "version": "1.0.0",
   "description": "Scripts optimized for running on iPhone 8 with Google Chrome browser",
-  "main": "launch.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node script.js"
+    "start": "node index.js"
   },
   "license": "MIT",
   "dependencies": {
